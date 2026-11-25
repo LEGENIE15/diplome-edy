@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation • Remise de Diplôme - Edy Canten ZIEPA NGAMBOU</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel, Playfair Display & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Canvas Confetti for celebratory golden particles -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#090A0F',
+                        charcoal: '#12151E',
+                        gold: {
+                            100: '#FBF5D4',
+                            200: '#F3E5AB',
+                            300: '#E5C76B',
+                            400: '#D4AF37',
+                            500: '#B59226',
+                            600: '#8E6F16',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% center' },
+                            '100%': { backgroundPosition: '-200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #2632e4; 
+            color: #F3F4F6;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Gold Text Gradient */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 45%, #FFF2B2 65%, #AA821C 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 6s linear infinite;
+        }
+
+        /* Glassmorphism Cards with Gold Border */
+        .luxury-card {
+            background: linear-gradient(145deg, rgba(22, 26, 38, 0.78) 0%, rgba(12, 14, 21, 0.88) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(243, 229, 171, 0.12);
+        }
+
+        .luxury-card-hover {
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .luxury-card-hover:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 25px 55px rgba(212, 175, 55, 0.12), inset 0 1px 0 rgba(243, 229, 171, 0.25);
+        }
+
+        /* Gold Button Styling */
+        .btn-gold {
+            background: linear-gradient(135deg, #E5C76B 0%, #D4AF37 50%, #B59226 100%);
+            color: #090A0F;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.65);
+        }
+        .btn-gold:active {
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090A0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.35);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.65);
+        }
+
+        /* Ambient Gold Dust Canvas */
+        #gold-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Ornamental Divider */
+        .ornament-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-400 selection:text-obsidian relative min-h-screen flex flex-col">
+
+    <!-- Ambient Gold Dust Background -->
+    <canvas id="gold-particles"></canvas>
+
+    <!-- Radial Ambient Glows -->
+    <div class="fixed top-[-15%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gold-400/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-15%] right-[-10%] w-[500px] h-[400px] bg-gold-500/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Top Subtle Navigation Bar -->
+    <header class="relative z-20 w-full border-b border-gold-400/15 bg-obsidian/70 backdrop-blur-md sticky top-0">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-full border border-gold-400/50 bg-gold-400/10 flex items-center justify-center text-gold-300 group-hover:bg-gold-400 group-hover:text-obsidian transition-colors">
+                    <i class="fa-solid fa-graduation-cap text-sm"></i>
+                </div>
+                <span class="font-display text-xs sm:text-sm tracking-[0.2em] text-gold-200 uppercase font-semibold">Édition 2026</span>
+            </a>
+
+            <nav class="flex items-center gap-2 sm:gap-5 text-xs sm:text-sm">
+                <a href="#details" class="text-gray-300 hover:text-gold-300 transition-colors px-2 py-1">Détails</a>
+                <a href="#livre-dor" class="text-gray-300 hover:text-gold-300 transition-colors px-2 py-1 hidden sm:inline">Livre d'or</a>
+                <button onclick="openAdminModal()" class="text-gold-300/90 hover:text-gold-200 transition-colors px-2.5 py-1.5 rounded-full border border-gold-400/25 bg-gold-400/5 text-xs flex items-center gap-1.5">
+                    <i class="fa-solid fa-chart-pie text-[11px]"></i>
+                    <span class="hidden md:inline">Tableau de bord</span>
+                </button>
+                <a href="#rsvp" class="btn-gold px-4 py-2 rounded-full text-xs uppercase tracking-wider">
+                    Confirmer
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="pt-10 pb-16 sm:pt-16 sm:pb-24 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+            <!-- Graduate Portrait in Royal Gold Frame -->
+            <div class="relative inline-block mb-8 animate-float">
+                <!-- Outer Ambient Gold Halo -->
+                <div class="absolute -inset-3 rounded-t-full rounded-b-3xl bg-gradient-to-b from-gold-300/40 via-gold-400/20 to-transparent blur-xl pointer-events-none"></div>
+                
+                <!-- Arch Frame -->
+                <div class="relative w-52 h-68 sm:w-64 sm:h-80 rounded-t-full rounded-b-3xl p-1.5 bg-gradient-to-b from-gold-200 via-gold-400 to-gold-600 shadow-[0_20px_50px_rgba(212,175,55,0.35)]">
+                    <div class="w-full h-full rounded-t-full rounded-b-[20px] overflow-hidden bg-charcoal relative">
+                        <img src="Gemini_Generated_Image_3a8hwn3a8hwn3a8h.jpeg" 
+                             alt="Portrait de remise de diplôme - Edy NGAMBOU Cantin"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x750/12151E/D4AF37?text=Edy+NGAMBOU+Cantin';"
+                             class="w-full h-full object-cover object-top">
+                        <!-- Subtle Bottom Vignette -->
+                        <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-transparent pointer-events-none"></div>
+                    </div>
+                </div>
+
+                <!-- Graduation Cap Crest Badge -->
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-obsidian border-2 border-gold-400 flex items-center justify-center text-gold-300 shadow-lg">
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+            </div>
+
+            <!-- Pre-title -->
+            <p id="ui-pretitle" class="font-display text-xs sm:text-sm tracking-[0.28em] text-gold-300 uppercase mb-3 mt-2 font-semibold">
+                Invitation Officielle • Remise de Diplôme
+            </p>
+
+            <!-- Graduate Name -->
+            <h1 id="ui-graduate-name" class="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide text-gold-gradient leading-tight mb-4">
+                Edy NGAMBOU Cantin
+            </h1>
+
+            <!-- Optional Diploma Title -->
+            <p id="ui-diploma-title" class="font-serif italic text-lg sm:text-2xl text-gold-100/90 mb-5 hidden">
+                <!-- Populated dynamically if set -->
+            </p>
+
+            <!-- Ornamental Divider -->
+            <div class="flex items-center justify-center gap-3 my-6 max-w-xs mx-auto">
+                <div class="ornament-line flex-grow"></div>
+                <i class="fa-solid fa-diamond text-[10px] text-gold-400"></i>
+                <div class="ornament-line flex-grow"></div>
+            </div>
+
+            <!-- Welcome Subtitle -->
+            <p id="ui-subtitle" class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light mb-10">
+                Après des années d'efforts et de persévérance, le moment est venu de célébrer cette grande étape. J'ai l'immense plaisir de vous convier à ma soirée de remise de diplôme !
+            </p>
+
+            <!-- Live Countdown Timer -->
+            <div class="max-w-xl mx-auto mb-10">
+                <p class="text-[11px] uppercase tracking-[0.25em] text-gold-300/80 mb-3 font-medium">Compte à rebours avant la soirée</p>
+                <div id="countdown-container" class="grid grid-cols-4 gap-2.5 sm:gap-4">
+                    <div class="luxury-card rounded-2xl py-3.5 px-2 sm:py-5">
+                        <div id="cd-days" class="font-display text-2xl sm:text-4xl font-bold text-gold-300">00</div>
+                        <div class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-1">Jours</div>
+                    </div>
+                    <div class="luxury-card rounded-2xl py-3.5 px-2 sm:py-5">
+                        <div id="cd-hours" class="font-display text-2xl sm:text-4xl font-bold text-gold-300">00</div>
+                        <div class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-1">Heures</div>
+                    </div>
+                    <div class="luxury-card rounded-2xl py-3.5 px-2 sm:py-5">
+                        <div id="cd-minutes" class="font-display text-2xl sm:text-4xl font-bold text-gold-300">00</div>
+                        <div class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-1">Minutes</div>
+                    </div>
+                    <div class="luxury-card rounded-2xl py-3.5 px-2 sm:py-5">
+                        <div id="cd-seconds" class="font-display text-2xl sm:text-4xl font-bold text-gold-300">00</div>
+                        <div class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-1">Secondes</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#rsvp" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm uppercase tracking-widest flex items-center justify-center gap-2.5">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <span>Confirmer ma présence</span>
+                </a>
+                <button onclick="downloadICS()" class="w-full sm:w-auto px-7 py-4 rounded-full border border-gold-400/40 bg-white/5 hover:bg-gold-400/15 text-gold-200 text-sm font-medium tracking-wider transition-all flex items-center justify-center gap-2.5">
+                    <i class="fa-regular fa-calendar-plus text-gold-400"></i>
+                    <span>Ajouter à mon agenda</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- EVENT DETAILS SECTION -->
+        <section id="details" class="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Informations Pratiques</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-2">Le Rendez-Vous</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+                <!-- Date Card -->
+                <div class="luxury-card luxury-card-hover rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-4">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">La Date</h3>
+                    <p id="ui-date-display" class="font-serif text-xl sm:text-2xl font-bold text-white">Mercredi 16 Décembre 2026</p>
+                    <p class="text-xs text-gray-400 mt-2">Notez bien cette soirée</p>
+                </div>
+
+                <!-- Time Card -->
+                <div class="luxury-card luxury-card-hover rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-4">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">L'Heure</h3>
+                    <p id="ui-time-display" class="font-serif text-xl sm:text-2xl font-bold text-white">20h00</p>
+                    <p id="ui-dress-code" class="text-xs text-gold-200/80 mt-2">Tenue chic souhaitée • Touche d'or</p>
+                </div>
+
+                <!-- Venue Card -->
+                <div class="luxury-card luxury-card-hover rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-4">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">Le Lieu</h3>
+                    <p id="ui-venue-name" class="font-serif text-xl sm:text-2xl font-bold text-white">Salle de fête de la Paroisse</p>
+                    <p id="ui-venue-address" class="text-xs text-gray-400 mt-2">Accueil chaleureux dès 20h00</p>
+                    <a id="ui-maps-link" href="https://maps.google.com/?q=Salle+de+fete+de+la+Paroisse" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs text-gold-300 hover:text-gold-200 underline underline-offset-4">
+                        <span>Voir sur la carte</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP INTERACTIVE FORM SECTION -->
+        <section id="rsvp" class="py-12 sm:py-16 px-4 sm:px-6 max-w-2xl mx-auto">
+            <div class="luxury-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <!-- Decorative corner accents -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold-400/10 rounded-bl-full pointer-events-none"></div>
+
+                <div class="text-center mb-8">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/30 text-gold-300 text-[11px] uppercase tracking-[0.2em] font-semibold mb-3">
+                        Réponse souhaitée
+                    </span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">Confirmez votre présence</h2>
+                    <p class="text-sm text-gray-400 mt-2">Faites-nous savoir si vous serez des nôtres pour célébrer Edy.</p>
+                </div>
+
+                <!-- RSVP Form -->
+                <form id="rsvp-form" class="space-y-5">
+                    <!-- Full Name & Optional Contact -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="guest-name" class="block text-xs uppercase tracking-wider text-gold-200 font-semibold mb-2">
+                                Votre Nom & Prénom <span class="text-gold-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gold-400/70">
+                                    <i class="fa-regular fa-user"></i>
+                                </span>
+                                <input type="text" id="guest-name" required placeholder="Ex: Jean Dupont"
+                                    class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-obsidian/80 border border-gold-400/30 text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="guest-contact" class="block text-xs uppercase tracking-wider text-gold-200 font-semibold mb-2">
+                                Téléphone ou Email <span class="text-gray-400 font-normal lowercase">(optionnel)</span>
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gold-400/70">
+                                    <i class="fa-solid fa-phone"></i>
+                                </span>
+                                <input type="text" id="guest-contact" placeholder="Ex: 06 12 34 56 78"
+                                    class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-obsidian/80 border border-gold-400/30 text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all text-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Radio Cards -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gold-200 font-semibold mb-2">
+                            Serez-vous présent(e) ? <span class="text-gold-400">*</span>
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="attendance" value="yes" checked class="peer sr-only" onchange="toggleGuestCount(true)">
+                                <div class="p-4 rounded-xl border border-gold-400/25 bg-obsidian/60 peer-checked:border-gold-400 peer-checked:bg-gold-400/15 transition-all flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold text-white">Oui, avec plaisir !</div>
+                                        <div class="text-[11px] text-gray-400">Je serai présent(e)</div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="attendance" value="no" class="peer sr-only" onchange="toggleGuestCount(false)">
+                                <div class="p-4 rounded-xl border border-gold-400/25 bg-obsidian/60 peer-checked:border-rose-400/80 peer-checked:bg-rose-500/10 transition-all flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold text-white">Désolé(e), absent(e)</div>
+                                        <div class="text-[11px] text-gray-400">Je ne pourrai pas venir</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Number of Guests (Hidden if declining) -->
+                    <div id="guest-count-wrapper" class="transition-all duration-300">
+                        <label for="guest-count" class="block text-xs uppercase tracking-wider text-gold-200 font-semibold mb-2">
+                            Nombre total de personnes (vous inclus)
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gold-400/70">
+                                <i class="fa-solid fa-users"></i>
+                            </span>
+                            <select id="guest-count" class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-obsidian/80 border border-gold-400/30 text-white focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all text-sm appearance-none">
+                                <option value="1">1 personne (Moi uniquement)</option>
+                                <option value="2">2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                            </select>
+                            <span class="absolute inset-y-0 right-0 pr-4 flex items-center text-gold-400 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Congratulatory Message -->
+                    <div>
+                        <label for="guest-message" class="block text-xs uppercase tracking-wider text-gold-200 font-semibold mb-2">
+                            Un petit mot pour Edy (Optionnel)
+                        </label>
+                        <textarea id="guest-message" rows="3" placeholder="Félicitations pour ton diplôme ! Hâte de fêter ça ensemble..."
+                            class="w-full p-4 rounded-xl bg-obsidian/80 border border-gold-400/30 text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all text-sm resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="rsvp-submit-btn" class="btn-gold w-full py-4 rounded-xl text-sm uppercase tracking-widest flex items-center justify-center gap-2.5 mt-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Envoyer ma réponse</span>
+                    </button>
+                </form>
+
+                <!-- Confirmation Success Banner (Hidden initially) -->
+                <div id="rsvp-success-view" class="hidden text-center py-6 space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-gold-400/20 border border-gold-400 flex items-center justify-center text-gold-300 text-2xl mx-auto">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 id="success-title" class="font-display text-2xl font-bold text-gold-300">Réponse enregistrée !</h3>
+                    <p id="success-desc" class="text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
+                        Merci beaucoup ! Votre réponse a bien été prise en compte pour la soirée d'Edy NGAMBOU Cantin.
+                    </p>
+                    <div class="pt-3">
+                        <button onclick="resetRsvpForm()" class="px-5 py-2.5 rounded-full border border-gold-400/40 text-xs text-gold-200 hover:bg-gold-400/15 transition-all">
+                            Envoyer une autre réponse
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GUESTBOOK / CONGRATULATIONS WALL -->
+        <section id="livre-dor" class="py-10 sm:py-14 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Livre d'or</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Messages des invités</h2>
+                </div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full luxury-card text-xs text-gold-200">
+                    <i class="fa-solid fa-user-check text-gold-400"></i>
+                    <span><strong id="public-confirmed-count" class="text-white">0</strong> invité(s) confirmé(s)</span>
+                </div>
+            </div>
+
+            <div id="guestbook-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Populated dynamically via Firestore -->
+                <div class="luxury-card rounded-2xl p-6 text-center col-span-full text-gray-400 text-sm">
+                    Soyez le premier à laisser un message de félicitations à Edy !
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER WITH DISCREET ADMIN BUTTON -->
+    <footer class="relative z-10 border-t border-gold-400/15 bg-obsidian/90 py-8 px-4 text-center mt-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-400">
+                Célébration de Remise de Diplôme • <span class="text-gold-300 font-medium" id="footer-name">Edy NGAMBOU Cantin</span>
+            </p>
+            <div class="flex items-center gap-4">
+                <button onclick="copyShareLink()" class="text-xs text-gray-400 hover:text-gold-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Copier le lien d'invitation</span>
+                </button>
+                <span class="text-gray-700">•</span>
+                <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-gold-300 transition-colors flex items-center gap-1.5" title="Tableau de bord Organisateur">
+                    <i class="fa-solid fa-lock text-gold-400/80"></i>
+                    <span>Tableau de bord Organisateur</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION (Replaces alert()) -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="luxury-card border-gold-400/60 px-5 py-3.5 rounded-2xl flex items-center gap-3 shadow-2xl">
+            <i id="toast-icon" class="fa-solid fa-circle-check text-gold-300 text-lg"></i>
+            <span id="toast-msg" class="text-xs sm:text-sm font-medium text-white">Action effectuée</span>
+        </div>
+    </div>
+
+    <!-- ADMIN MODAL (PIN + SETTINGS + GUEST LIST) -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="luxury-card rounded-3xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden border border-gold-400/40 shadow-2xl">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gold-400/20 flex items-center justify-between bg-obsidian/60">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-crown text-gold-400"></i>
+                    <h3 class="font-display text-base sm:text-lg font-bold text-white">Tableau de bord Organisateur</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- PIN AUTH SCREEN -->
+            <div id="admin-pin-screen" class="p-8 sm:p-12 text-center max-w-sm mx-auto my-auto">
+                <div class="w-14 h-14 rounded-2xl bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-300 text-xl mx-auto mb-4">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h4 class="font-display text-xl font-bold text-white mb-2">Accès Protégé</h4>
+                <p class="text-xs text-gray-400 mb-6">Entrez votre code PIN organisateur pour modifier l'invitation ou voir les invités.</p>
+                
+                <form onsubmit="verifyAdminPin(event)" class="space-y-4">
+                    <input type="password" id="admin-pin-input" maxlength="10" placeholder="Code PIN (ex: 2026)" required
+                        class="w-full text-center tracking-[0.4em] font-bold text-lg py-3 px-4 rounded-xl bg-obsidian border border-gold-400/40 text-gold-300 focus:outline-none focus:border-gold-400">
+                    <p id="pin-error-msg" class="text-xs text-rose-400 hidden">Code PIN incorrect. Réessayez.</p>
+                    <button type="submit" class="btn-gold w-full py-3 rounded-xl text-xs uppercase tracking-widest">
+                        Déverrouiller
+                    </button>
+                </form>
+            </div>
+
+            <!-- ADMIN DASHBOARD CONTENT (Unlocked) -->
+            <div id="admin-dashboard" class="hidden flex-col flex-grow overflow-hidden">
+                <!-- Navigation Tabs -->
+                <div class="flex border-b border-gold-400/20 bg-obsidian/40 px-4 pt-2 gap-2">
+                    <button onclick="switchAdminTab('guests')" id="tab-btn-guests" class="px-4 py-2.5 text-xs sm:text-sm font-semibold border-b-2 border-gold-400 text-gold-300 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Liste des invités</span>
+                    </button>
+                    <button onclick="switchAdminTab('edit')" id="tab-btn-edit" class="px-4 py-2.5 text-xs sm:text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Modifier les infos</span>
+                    </button>
+                </div>
+
+                <!-- Scrollable Body -->
+                <div class="p-5 sm:p-6 overflow-y-auto flex-grow space-y-6">
+                    
+                    <!-- TAB 1: GUEST LIST -->
+                    <div id="admin-tab-guests" class="space-y-5">
+                        <!-- KPI Summary Cards -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="bg-obsidian/80 border border-gold-400/30 rounded-2xl p-3.5 text-center">
+                                <div id="kpi-total" class="font-display text-2xl font-bold text-gold-300">0</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Total réponses</div>
+                            </div>
+                            <div class="bg-obsidian/80 border border-emerald-500/30 rounded-2xl p-3.5 text-center">
+                                <div id="kpi-yes" class="font-display text-2xl font-bold text-emerald-400">0</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Participants (pers.)</div>
+                            </div>
+                            <div class="bg-obsidian/80 border border-rose-500/30 rounded-2xl p-3.5 text-center">
+                                <div id="kpi-no" class="font-display text-2xl font-bold text-rose-400">0</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Refus / Absents</div>
+                            </div>
+                            <div class="bg-obsidian/80 border border-sky-500/30 rounded-2xl p-3.5 text-center">
+                                <div id="kpi-rate" class="font-display text-2xl font-bold text-sky-400">0%</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Taux présence</div>
+                            </div>
+                        </div>
+
+                        <!-- Filter, Search & Export Bar -->
+                        <div class="flex flex-col sm:flex-row gap-2.5 justify-between">
+                            <input type="text" id="admin-search-guest" oninput="renderAdminGuestList()" placeholder="Rechercher par nom ou contact..."
+                                class="px-3.5 py-2 rounded-xl bg-obsidian border border-gold-400/25 text-xs text-white focus:outline-none focus:border-gold-400 flex-grow">
+                            <select id="admin-filter-status" onchange="renderAdminGuestList()"
+                                class="px-3.5 py-2 rounded-xl bg-obsidian border border-gold-400/25 text-xs text-gray-200 focus:outline-none focus:border-gold-400">
+                                <option value="all">Tous les statuts</option>
+                                <option value="yes">Présents uniquement</option>
+                                <option value="no">Absents uniquement</option>
+                            </select>
+                            <button onclick="exportGuestsCSV()" class="px-4 py-2 rounded-xl bg-gold-400/15 hover:bg-gold-400/25 border border-gold-400/40 text-gold-200 text-xs font-semibold flex items-center justify-center gap-2 transition-colors shrink-0">
+                                <i class="fa-solid fa-file-csv"></i>
+                                <span>Exporter CSV</span>
+                            </button>
+                        </div>
+
+                        <!-- Guest Table / List -->
+                        <div id="admin-guest-list" class="space-y-2.5">
+                            <!-- Rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: EDIT INVITATION DETAILS -->
+                    <form id="admin-edit-form" onsubmit="saveEventSettings(event)" class="hidden space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Nom du diplômé</label>
+                                <input type="text" id="edit-name" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Intitulé du diplôme (Optionnel)</label>
+                                <input type="text" id="edit-diploma" placeholder="Ex: Master en Droit / Ingénieur..." class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Date affichée</label>
+                                <input type="text" id="edit-date-text" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Heure affichée</label>
+                                <input type="text" id="edit-time-text" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Date & Heure (Compte à rebours)</label>
+                                <input type="datetime-local" id="edit-countdown-iso" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Nom du lieu</label>
+                                <input type="text" id="edit-venue" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Précision lieu / Adresse</label>
+                                <input type="text" id="edit-address" placeholder="Ex: Quartier Centre, face à l'église" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Code vestimentaire / Note</label>
+                                <input type="text" id="edit-dresscode" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Nouveau Code PIN Admin</label>
+                                <input type="text" id="edit-pin" maxlength="10" required class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] uppercase tracking-wider text-gold-200 mb-1.5">Message d'accueil de l'invitation</label>
+                            <textarea id="edit-subtitle" rows="3" required class="w-full p-3.5 rounded-xl bg-obsidian border border-gold-400/30 text-sm text-white focus:border-gold-400 focus:outline-none resize-none"></textarea>
+                        </div>
+
+                        <div class="pt-2 flex justify-end">
+                            <button type="submit" id="save-settings-btn" class="btn-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                <span>Enregistrer les modifications</span>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIREBASE & APPLICATION LOGIC -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Default Event Configuration for Edy NGAMBOU Cantin
+        const DEFAULT_EVENT_CONFIG = {
+            graduateName: "Edy NGAMBOU Cantin",
+            diplomaTitle: "",
+            subtitle: "Après des années d'efforts et de persévérance, le moment est venu de célébrer cette grande étape. J'ai l'immense plaisir de vous convier à ma soirée de remise de diplôme !",
+            dateDisplay: "Mercredi 16 Décembre 2026",
+            timeDisplay: "20h00",
+            countdownIso: "2026-12-16T20:00",
+            venueName: "Salle de fête de la Paroisse",
+            venueAddress: "Accueil chaleureux dès 20h00",
+            dressCode: "Tenue chic souhaitée • Touche d'or",
+            adminPin: "2026"
+        };
+
+        let currentConfig = { ...DEFAULT_EVENT_CONFIG };
+        let allRsvps = [];
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+        let isAdminUnlocked = false;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'edy-graduation-2026';
+
+        // Initialize Firebase cleanly
+        async function initApp() {
+            try {
+                if (typeof __firebase_config !== 'undefined') {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        const cred = await signInWithCustomToken(auth, __initial_auth_token);
+                        currentUser = cred.user;
+                    } else {
+                        const cred = await signInAnonymously(auth);
+                        currentUser = cred.user;
+                    }
+
+                    setupRealtimeListeners();
+                } else {
+                    renderEventUI();
+                }
+            } catch (err) {
+                console.error("Erreur d'initialisation:", err);
+                renderEventUI();
+            }
+        }
+
+        // Listen to Event Details & RSVP List in real-time
+        function setupRealtimeListeners() {
+            if (!db || !currentUser) return;
+
+            // 1. Public Event Configuration Document
+            const configRef = doc(db, 'artifacts', appId, 'public', 'data', 'event_settings', 'main');
+            onSnapshot(configRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    currentConfig = { ...DEFAULT_EVENT_CONFIG, ...docSnap.data() };
+                } else {
+                    // Seed default settings on first visit
+                    setDoc(configRef, DEFAULT_EVENT_CONFIG).catch(e => console.error(e));
+                }
+                renderEventUI();
+            }, (error) => {
+                console.error("Erreur écoute configuration:", error);
+            });
+
+            // 2. Public RSVPs Collection
+            const rsvpsCol = collection(db, 'artifacts', appId, 'public', 'data', 'rsvps');
+            onSnapshot(rsvpsCol, (snapshot) => {
+                const items = [];
+                snapshot.forEach((docItem) => {
+                    items.push({ id: docItem.id, ...docItem.data() });
+                });
+                // Sort newest first in memory
+                items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                allRsvps = items;
+                renderGuestbook();
+                if (isAdminUnlocked) {
+                    renderAdminGuestList();
+                }
+            }, (error) => {
+                console.error("Erreur écoute RSVPs:", error);
+            });
+        }
+
+        // Update DOM with current event settings
+        function renderEventUI() {
+            document.getElementById('ui-graduate-name').textContent = currentConfig.graduateName;
+            document.getElementById('footer-name').textContent = currentConfig.graduateName;
+            document.title = `Invitation • Remise de Diplôme - ${currentConfig.graduateName}`;
+
+            const diplomaEl = document.getElementById('ui-diploma-title');
+            if (currentConfig.diplomaTitle && currentConfig.diplomaTitle.trim() !== "") {
+                diplomaEl.textContent = currentConfig.diplomaTitle;
+                diplomaEl.classList.remove('hidden');
+            } else {
+                diplomaEl.classList.add('hidden');
+            }
+
+            document.getElementById('ui-subtitle').textContent = currentConfig.subtitle;
+            document.getElementById('ui-date-display').textContent = currentConfig.dateDisplay;
+            document.getElementById('ui-time-display').textContent = currentConfig.timeDisplay;
+            document.getElementById('ui-venue-name').textContent = currentConfig.venueName;
+            document.getElementById('ui-venue-address').textContent = currentConfig.venueAddress || "Accueil chaleureux";
+            document.getElementById('ui-dress-code').textContent = currentConfig.dressCode || "Tenue chic souhaitée";
+
+            const mapsQuery = encodeURIComponent(`${currentConfig.venueName} ${currentConfig.venueAddress || ''}`.trim());
+            document.getElementById('ui-maps-link').href = `https://maps.google.com/?q=${mapsQuery}`;
+
+            // Populate Admin Edit Fields
+            document.getElementById('edit-name').value = currentConfig.graduateName;
+            document.getElementById('edit-diploma').value = currentConfig.diplomaTitle || "";
+            document.getElementById('edit-date-text').value = currentConfig.dateDisplay;
+            document.getElementById('edit-time-text').value = currentConfig.timeDisplay;
+            document.getElementById('edit-countdown-iso').value = currentConfig.countdownIso;
+            document.getElementById('edit-venue').value = currentConfig.venueName;
+            document.getElementById('edit-address').value = currentConfig.venueAddress || "";
+            document.getElementById('edit-dresscode').value = currentConfig.dressCode || "";
+            document.getElementById('edit-pin').value = currentConfig.adminPin || "2026";
+            document.getElementById('edit-subtitle').value = currentConfig.subtitle;
+        }
+
+        // Render Public Guestbook & Confirmed Counter
+        function renderGuestbook() {
+            let confirmedPeople = 0;
+            const messages = [];
+
+            allRsvps.forEach(item => {
+                if (item.attending) {
+                    confirmedPeople += parseInt(item.guests || 1, 10);
+                }
+                if (item.message && item.message.trim() !== "") {
+                    messages.push(item);
+                }
+            });
+
+            document.getElementById('public-confirmed-count').textContent = confirmedPeople;
+
+            const grid = document.getElementById('guestbook-grid');
+            if (messages.length === 0) {
+                grid.innerHTML = `
+                    <div class="luxury-card rounded-2xl p-6 text-center col-span-full text-gray-400 text-sm">
+                        Soyez le premier à laisser un message de félicitations à ${escapeHtml(currentConfig.graduateName)} !
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = messages.map(m => `
+                <div class="luxury-card rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-full bg-gold-400/20 border border-gold-400/40 flex items-center justify-center text-gold-300 font-display text-xs font-bold">
+                                    ${escapeHtml(m.name.charAt(0).toUpperCase())}
+                                </div>
+                                <span class="font-semibold text-sm text-white">${escapeHtml(m.name)}</span>
+                            </div>
+                            ${m.attending
+                                ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Présent(e)</span>`
+                                : `<span class="text-[10px] px-2 py-0.5 rounded-full bg-gold-400/15 text-gold-300 border border-gold-400/30">Pensée</span>`
+                            }
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">"${escapeHtml(m.message)}"</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Handle RSVP Form Submission
+        document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('rsvp-submit-btn');
+            const nameInput = document.getElementById('guest-name').value.trim();
+            const contactInput = document.getElementById('guest-contact').value.trim();
+            const attendingVal = document.querySelector('input[name="attendance"]:checked').value === 'yes';
+            const guestCountVal = attendingVal ? parseInt(document.getElementById('guest-count').value, 10) : 0;
+            const messageVal = document.getElementById('guest-message').value.trim();
+
+            if (!nameInput) return;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Enregistrement...</span>`;
+
+            const rsvpPayload = {
+                name: nameInput,
+                contact: contactInput,
+                attending: attendingVal,
+                guests: guestCountVal,
+                message: messageVal,
+                createdAt: Date.now()
+            };
+
+            try {
+                if (db && currentUser) {
+                    await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'rsvps'), rsvpPayload);
+                } else {
+                    allRsvps.unshift({ id: Date.now().toString(), ...rsvpPayload });
+                    renderGuestbook();
+                }
+
+                // Show celebration UI
+                document.getElementById('rsvp-form').classList.add('hidden');
+                const successView = document.getElementById('rsvp-success-view');
+                successView.classList.remove('hidden');
+
+                if (attendingVal) {
+                    document.getElementById('success-title').textContent = `Merci ${nameInput} !`;
+                    document.getElementById('success-desc').textContent = `Votre présence (${guestCountVal} personne${guestCountVal > 1 ? 's' : ''}) est confirmée. Rendez-vous le ${currentConfig.dateDisplay} à ${currentConfig.timeDisplay} !`;
+                    triggerGoldConfetti();
+                } else {
+                    document.getElementById('success-title').textContent = `Réponse enregistrée`;
+                    document.getElementById('success-desc').textContent = `Merci ${nameInput} de nous avoir prévenus. Vous serez dans nos pensées lors de cette belle soirée !`;
+                }
+
+                showToast("Votre réponse a bien été envoyée !");
+            } catch (err) {
+                console.error("Erreur lors de l'envoi RSVP:", err);
+                showToast("Une erreur est survenue, veuillez réessayer.", true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> <span>Envoyer ma réponse</span>`;
+            }
+        });
+
+        // Save Admin Edits to Firestore
+        window.saveEventSettings = async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('save-settings-btn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sauvegarde...</span>`;
+
+            const updatedData = {
+                graduateName: document.getElementById('edit-name').value.trim(),
+                diplomaTitle: document.getElementById('edit-diploma').value.trim(),
+                dateDisplay: document.getElementById('edit-date-text').value.trim(),
+                timeDisplay: document.getElementById('edit-time-text').value.trim(),
+                countdownIso: document.getElementById('edit-countdown-iso').value,
+                venueName: document.getElementById('edit-venue').value.trim(),
+                venueAddress: document.getElementById('edit-address').value.trim(),
+                dressCode: document.getElementById('edit-dresscode').value.trim(),
+                adminPin: document.getElementById('edit-pin').value.trim() || "2026",
+                subtitle: document.getElementById('edit-subtitle').value.trim()
+            };
+
+            try {
+                if (db && currentUser) {
+                    const configRef = doc(db, 'artifacts', appId, 'public', 'data', 'event_settings', 'main');
+                    await setDoc(configRef, updatedData);
+                } else {
+                    currentConfig = { ...currentConfig, ...updatedData };
+                    renderEventUI();
+                }
+                showToast("Informations mises à jour en direct !");
+            } catch (err) {
+                console.error("Erreur sauvegarde paramètres:", err);
+                showToast("Erreur lors de la sauvegarde.", true);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-floppy-disk"></i> <span>Enregistrer les modifications</span>`;
+            }
+        };
+
+        // Delete a guest entry (Admin)
+        window.deleteGuestEntry = async function(id) {
+            try {
+                if (db && currentUser) {
+                    await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'rsvps', id));
+                } else {
+                    allRsvps = allRsvps.filter(g => g.id !== id);
+                    renderGuestbook();
+                    renderAdminGuestList();
+                }
+                showToast("Entrée supprimée.");
+            } catch (err) {
+                console.error("Erreur suppression:", err);
+                showToast("Impossible de supprimer.", true);
+            }
+        };
+
+        // Render Admin Guest List & KPIs
+        window.renderAdminGuestList = function() {
+            let yesGuests = 0;
+            let yesResponses = 0;
+            let noCount = 0;
+
+            allRsvps.forEach(r => {
+                if (r.attending) {
+                    yesResponses += 1;
+                    yesGuests += parseInt(r.guests || 1, 10);
+                } else {
+                    noCount += 1;
+                }
+            });
+
+            const rate = allRsvps.length > 0 ? Math.round((yesResponses / allRsvps.length) * 100) : 0;
+
+            document.getElementById('kpi-yes').textContent = yesGuests;
+            document.getElementById('kpi-no').textContent = noCount;
+            document.getElementById('kpi-total').textContent = allRsvps.length;
+            document.getElementById('kpi-rate').textContent = `${rate}%`;
+
+            const search = (document.getElementById('admin-search-guest').value || '').toLowerCase();
+            const statusFilter = document.getElementById('admin-filter-status').value;
+
+            const filtered = allRsvps.filter(r => {
+                const matchesText = r.name.toLowerCase().includes(search) || (r.contact || '').toLowerCase().includes(search);
+                const matchesStatus = statusFilter === 'all'
+                    || (statusFilter === 'yes' && r.attending)
+                    || (statusFilter === 'no' && !r.attending);
+                return matchesText && matchesStatus;
+            });
+
+            const listContainer = document.getElementById('admin-guest-list');
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `<div class="text-center py-8 text-xs text-gray-500">Aucune réponse correspondante.</div>`;
+                return;
+            }
+
+            listContainer.innerHTML = filtered.map(r => {
+                const dateStr = r.createdAt
+                    ? new Date(r.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+                    : '';
+                return `
+                <div class="bg-obsidian/70 border border-gold-400/20 rounded-xl p-3.5 flex items-start justify-between gap-3">
+                    <div class="min-w-0 space-y-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-semibold text-sm text-white">${escapeHtml(r.name)}</span>
+                            ${r.attending
+                                ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Présent • ${r.guests} pers.</span>`
+                                : `<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30">Absent(e)</span>`
+                            }
+                            ${dateStr ? `<span class="text-[10px] text-gray-500">${dateStr}</span>` : ''}
+                        </div>
+                        ${r.contact ? `<div class="text-[11px] text-gold-300/80"><i class="fa-solid fa-address-book mr-1"></i>${escapeHtml(r.contact)}</div>` : ''}
+                        ${r.message ? `<p class="text-xs text-gray-300 italic">"${escapeHtml(r.message)}"</p>` : ''}
+                    </div>
+                    <button onclick="deleteGuestEntry('${r.id}')" class="w-8 h-8 rounded-lg bg-rose-500/10 hover:bg-rose-500/25 text-rose-400 flex items-center justify-center shrink-0 transition-colors" title="Supprimer">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `;
+            }).join('');
+        };
+
+        // Export Guest List as CSV
+        window.exportGuestsCSV = function() {
+            if (allRsvps.length === 0) {
+                showToast("Aucun invité à exporter.", true);
+                return;
+            }
+            const headers = ["Nom et Prenom", "Contact", "Statut", "Nombre de personnes", "Message", "Date de reponse"];
+            const rows = allRsvps.map(r => [
+                `"${(r.name || '').replace(/"/g, '""')}"`,
+                `"${(r.contact || '').replace(/"/g, '""')}"`,
+                r.attending ? "Present" : "Absent",
+                r.attending ? (r.guests || 1) : 0,
+                `"${(r.message || '').replace(/"/g, '""')}"`,
+                `"${r.createdAt ? new Date(r.createdAt).toLocaleString('fr-FR') : ''}"`
+            ]);
+
+            const csvContent = "\uFEFF" + [headers.join(";"), ...rows.map(e => e.join(";"))].join("\n");
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `Invites_Diplome_${currentConfig.graduateName.replace(/\s+/g, '_')}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast("Liste CSV téléchargée !");
+        };
+
+        // Download .ICS Calendar File
+        window.downloadICS = function() {
+            const startDate = new Date(currentConfig.countdownIso || "2026-12-16T20:00");
+            const endDate = new Date(startDate.getTime() + 4 * 60 * 60 * 1000); // +4 hours
+
+            const formatICSDate = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+            const icsLines = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//Invitation Remise de Diplome//FR",
+                "BEGIN:VEVENT",
+                `DTSTART:${formatICSDate(startDate)}`,
+                `DTEND:${formatICSDate(endDate)}`,
+                `SUMMARY:Remise de Diplôme - ${currentConfig.graduateName}`,
+                `DESCRIPTION:${currentConfig.subtitle}`,
+                `LOCATION:${currentConfig.venueName} ${currentConfig.venueAddress || ''}`,
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\r\n");
+
+            const blob = new Blob([icsLines], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Invitation_${currentConfig.graduateName.replace(/\s+/g, '_')}.ics`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast("Événement ajouté à votre agenda !");
+        };
+
+        // Live Countdown Timer Loop
+        setInterval(() => {
+            const target = new Date(currentConfig.countdownIso || "2026-12-16T20:00").getTime();
+            const now = Date.now();
+            const diff = target - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = "00";
+                document.getElementById('cd-hours').textContent = "00";
+                document.getElementById('cd-minutes').textContent = "00";
+                document.getElementById('cd-seconds').textContent = "00";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+        }, 1000);
+
+        // Helper: Escape HTML to prevent XSS
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Helper: Toggle guest count dropdown
+        window.toggleGuestCount = function(isAttending) {
+            const wrapper = document.getElementById('guest-count-wrapper');
+            if (isAttending) {
+                wrapper.classList.remove('opacity-40', 'pointer-events-none');
+            } else {
+                wrapper.classList.add('opacity-40', 'pointer-events-none');
+            }
+        };
+
+        // Helper: Reset RSVP Form
+        window.resetRsvpForm = function() {
+            document.getElementById('rsvp-form').reset();
+            toggleGuestCount(true);
+            document.getElementById('rsvp-success-view').classList.add('hidden');
+            document.getElementById('rsvp-form').classList.remove('hidden');
+        };
+
+        // Admin Modal Controls
+        window.openAdminModal = function() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            if (isAdminUnlocked) {
+                document.getElementById('admin-pin-screen').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                document.getElementById('admin-dashboard').classList.add('flex');
+                renderAdminGuestList();
+            } else {
+                document.getElementById('admin-pin-input').value = '';
+                document.getElementById('pin-error-msg').classList.add('hidden');
+            }
+        };
+
+        window.closeAdminModal = function() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.verifyAdminPin = function(e) {
+            e.preventDefault();
+            const entered = document.getElementById('admin-pin-input').value.trim();
+            const expected = currentConfig.adminPin || "2026";
+            if (entered === expected) {
+                isAdminUnlocked = true;
+                document.getElementById('admin-pin-screen').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                document.getElementById('admin-dashboard').classList.add('flex');
+                renderAdminGuestList();
+            } else {
+                document.getElementById('pin-error-msg').classList.remove('hidden');
+            }
+        };
+
+        window.switchAdminTab = function(tab) {
+            const guestsTab = document.getElementById('admin-tab-guests');
+            const editTab = document.getElementById('admin-edit-form');
+            const btnGuests = document.getElementById('tab-btn-guests');
+            const btnEdit = document.getElementById('tab-btn-edit');
+
+            if (tab === 'guests') {
+                guestsTab.classList.remove('hidden');
+                editTab.classList.add('hidden');
+                btnGuests.classList.add('border-gold-400', 'text-gold-300');
+                btnGuests.classList.remove('border-transparent', 'text-gray-400');
+                btnEdit.classList.remove('border-gold-400', 'text-gold-300');
+                btnEdit.classList.add('border-transparent', 'text-gray-400');
+                renderAdminGuestList();
+            } else {
+                guestsTab.classList.add('hidden');
+                editTab.classList.remove('hidden');
+                btnEdit.classList.add('border-gold-400', 'text-gold-300');
+                btnEdit.classList.remove('border-transparent', 'text-gray-400');
+                btnGuests.classList.remove('border-gold-400', 'text-gold-300');
+                btnGuests.classList.add('border-transparent', 'text-gray-400');
+            }
+        };
+
+        // Copy Invitation Link
+        window.copyShareLink = function() {
+            const tempInput = document.createElement('input');
+            tempInput.value = window.location.href;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast("Lien d'invitation copié !");
+        };
+
+        // Toast Notification Helper
+        window.showToast = function(msg, isError = false) {
+            const box = document.getElementById('toast-box');
+            const icon = document.getElementById('toast-icon');
+            const text = document.getElementById('toast-msg');
+
+            text.textContent = msg;
+            icon.className = isError
+                ? "fa-solid fa-circle-exclamation text-rose-400 text-lg"
+                : "fa-solid fa-circle-check text-gold-300 text-lg";
+
+            box.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                box.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        };
+
+        // Trigger Celebratory Gold Confetti
+        function triggerGoldConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 75,
+                    spread: 70,
+                    origin: { y: 0.65 },
+                    colors: ['#D4AF37', '#F3E5AB', '#FFF2B2', '#B59226']
+                });
+            }
+        }
+
+        // Ambient Floating Gold Particles Canvas
+        function initGoldParticles() {
+            const canvas = document.getElementById('gold-particles');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const count = Math.min(45, Math.floor(window.innerWidth / 25));
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2 + 0.6,
+                    vx: (Math.random() - 0.5) * 0.25,
+                    vy: -Math.random() * 0.35 - 0.1,
+                    alpha: Math.random() * 0.6 + 0.2
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.y < -10) p.y = canvas.height + 10;
+                    if (p.x < -10) p.x = canvas.width + 10;
+                    if (p.x > canvas.width + 10) p.x = -10;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initGoldParticles();
+            initApp();
+        });
+    </script>
+</body>
+</html>
