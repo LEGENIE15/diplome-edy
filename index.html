@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitation • Remise de Diplôme - Edy Canten ZIEPA NGAMBOU</title>
+    <title>Invitation • Remise de Diplôme - ZIEPA NGAMBOU Edy Canten</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Cinzel, Playfair Display & Montserrat -->
@@ -57,7 +57,7 @@
 
     <style>
         body {
-            background-color: #2632e4; 
+            background-color: #000808;
             color: #F3F4F6;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
@@ -139,6 +139,26 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
         }
+
+        /* Smooth Infinite Marquee Ticker for Guest Messages */
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .guest-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 28s linear infinite;
+        }
+
+        .guest-marquee-wrapper:hover .guest-marquee-track {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-gold-400 selection:text-obsidian relative min-h-screen flex flex-col">
@@ -187,9 +207,9 @@
                 <!-- Arch Frame -->
                 <div class="relative w-52 h-68 sm:w-64 sm:h-80 rounded-t-full rounded-b-3xl p-1.5 bg-gradient-to-b from-gold-200 via-gold-400 to-gold-600 shadow-[0_20px_50px_rgba(212,175,55,0.35)]">
                     <div class="w-full h-full rounded-t-full rounded-b-[20px] overflow-hidden bg-charcoal relative">
-                        <img src="Gemini_Generated_Image_3a8hwn3a8hwn3a8h.jpeg" 
-                             alt="Portrait de remise de diplôme - Edy NGAMBOU Cantin"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x750/12151E/D4AF37?text=Edy+NGAMBOU+Cantin';"
+                        <img src="photo Edy.jpeg"
+                             alt="Portrait de remise de diplôme - ZIEPA NGAMBOU Edy Canten"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x750/12151E/D4AF37?text=ZIEPA+NGAMBOU+Edy+Canten';"
                              class="w-full h-full object-cover object-top">
                         <!-- Subtle Bottom Vignette -->
                         <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-transparent pointer-events-none"></div>
@@ -209,7 +229,8 @@
 
             <!-- Graduate Name -->
             <h1 id="ui-graduate-name" class="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide text-gold-gradient leading-tight mb-4">
-                Edy NGAMBOU Cantin
+                ZIEPA NGAMBOU 
+                Edy Canten
             </h1>
 
             <!-- Optional Diploma Title -->
@@ -231,7 +252,7 @@
 
             <!-- Live Countdown Timer -->
             <div class="max-w-xl mx-auto mb-10">
-                <p class="text-[11px] uppercase tracking-[0.25em] text-gold-300/80 mb-3 font-medium">Compte à rebours avant la soirée</p>
+                <p class="text-[11px] uppercase tracking-[0.25em] text-gold-300/80 mb-3 font-medium"> Compte à rebours avant la Date </p>
                 <div id="countdown-container" class="grid grid-cols-4 gap-2.5 sm:gap-4">
                     <div class="luxury-card rounded-2xl py-3.5 px-2 sm:py-5">
                         <div id="cd-days" class="font-display text-2xl sm:text-4xl font-bold text-gold-300">00</div>
@@ -280,7 +301,7 @@
                     </div>
                     <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">La Date</h3>
                     <p id="ui-date-display" class="font-serif text-xl sm:text-2xl font-bold text-white">Mercredi 16 Décembre 2026</p>
-                    <p class="text-xs text-gray-400 mt-2">Notez bien cette soirée</p>
+                    <p class="text-xs text-gray-400 mt-2">Notez bien cette Date</p>
                 </div>
 
                 <!-- Time Card -->
@@ -290,7 +311,7 @@
                     </div>
                     <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">L'Heure</h3>
                     <p id="ui-time-display" class="font-serif text-xl sm:text-2xl font-bold text-white">20h00</p>
-                    <p id="ui-dress-code" class="text-xs text-gold-200/80 mt-2">Tenue chic souhaitée • Touche d'or</p>
+                    <p id="ui-dress-code" class="text-xs text-gold-200/80 mt-2">Tenue chic souhaitée • Beaucoup de Joie </p>
                 </div>
 
                 <!-- Venue Card -->
@@ -299,9 +320,9 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <h3 class="font-display text-xs uppercase tracking-[0.2em] text-gold-300 mb-2">Le Lieu</h3>
-                    <p id="ui-venue-name" class="font-serif text-xl sm:text-2xl font-bold text-white">Salle de fête de la Paroisse</p>
-                    <p id="ui-venue-address" class="text-xs text-gray-400 mt-2">Accueil chaleureux dès 20h00</p>
-                    <a id="ui-maps-link" href="https://maps.google.com/?q=Salle+de+fete+de+la+Paroisse" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs text-gold-300 hover:text-gold-200 underline underline-offset-4">
+                    <p id="ui-venue-name" class="font-serif text-xl sm:text-2xl font-bold text-white">OSPEDALE CISANELLO</p>
+                    <p id="ui-venue-address" class="text-xs text-gray-400 mt-2">Accueil chaleureux dès 10h00</p>
+                    <a id="ui-maps-link" href="https://maps.app.goo.gl/T3Ez3zua6RKLe9eM9" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs text-gold-300 hover:text-gold-200 underline underline-offset-4">
                         <span>Voir sur la carte</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
@@ -433,7 +454,7 @@
                     </div>
                     <h3 id="success-title" class="font-display text-2xl font-bold text-gold-300">Réponse enregistrée !</h3>
                     <p id="success-desc" class="text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-                        Merci beaucoup ! Votre réponse a bien été prise en compte pour la soirée d'Edy NGAMBOU Cantin.
+                        Merci beaucoup ! Votre réponse a bien été prise en compte.
                     </p>
                     <div class="pt-3">
                         <button onclick="resetRsvpForm()" class="px-5 py-2.5 rounded-full border border-gold-400/40 text-xs text-gold-200 hover:bg-gold-400/15 transition-all">
@@ -446,21 +467,23 @@
 
         <!-- GUESTBOOK / CONGRATULATIONS WALL -->
         <section id="livre-dor" class="py-10 sm:py-14 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
                 <div>
                     <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Livre d'or</span>
                     <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Messages des invités</h2>
                 </div>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full luxury-card text-xs text-gold-200">
-                    <i class="fa-solid fa-user-check text-gold-400"></i>
-                    <span><strong id="public-confirmed-count" class="text-white">0</strong> invité(s) confirmé(s)</span>
+                <div class="text-[11px] uppercase tracking-[0.18em] text-gold-300/80 flex items-center gap-2">
+                    <i class="fa-solid fa-scroll text-gold-400"></i>
+                    <!--<span>Défilement en direct • Survolez pour mettre en pause</span>-->
                 </div>
             </div>
 
-            <div id="guestbook-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Populated dynamically via Firestore -->
-                <div class="luxury-card rounded-2xl p-6 text-center col-span-full text-gray-400 text-sm">
-                    Soyez le premier à laisser un message de félicitations à Edy !
+            <!-- Horizontal Scrolling Marquee directly under "Messages des invités" -->
+            <div class="luxury-card rounded-3xl py-5 px-2 overflow-hidden relative">
+                <div class="guest-marquee-wrapper w-full overflow-hidden">
+                    <div id="guestbook-marquee-track" class="guest-marquee-track items-stretch gap-4 px-2">
+                        <!-- Populated dynamically with Name & Message only -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -471,17 +494,17 @@
     <footer class="relative z-10 border-t border-gold-400/15 bg-obsidian/90 py-8 px-4 text-center mt-12">
         <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-gray-400">
-                Célébration de Remise de Diplôme • <span class="text-gold-300 font-medium" id="footer-name">Edy NGAMBOU Cantin</span>
+                Célébration de Remise de Diplôme • <span class="text-gold-300 font-medium" id="footer-name">ZIEPA NGAMBOU Edy Cantin</span>
             </p>
             <div class="flex items-center gap-4">
                 <button onclick="copyShareLink()" class="text-xs text-gray-400 hover:text-gold-300 transition-colors flex items-center gap-1.5">
                     <i class="fa-solid fa-share-nodes"></i>
-                    <span>Copier le lien d'invitation</span>
+                    <!--<span>Copier le lien d'invitation</span>-->
                 </button>
                 <span class="text-gray-700">•</span>
                 <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-gold-300 transition-colors flex items-center gap-1.5" title="Tableau de bord Organisateur">
                     <i class="fa-solid fa-lock text-gold-400/80"></i>
-                    <span>Tableau de bord Organisateur</span>
+                    <!--<span>Tableau de bord Organisateur</span>-->
                 </button>
             </div>
         </div>
@@ -661,7 +684,16 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, setDoc, addDoc, deleteDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // =====================================================================
+        // COLLEZ ICI LE LIEN DE VOTRE FORMULAIRE (Formspree, Google Apps Script, etc.)
+        // Exemple : "https://formspree.io/f/xabcdefg"
+        // =====================================================================
+        const FORM_ENDPOINT_URL = "https://formspree.io/f/mnpdyjrq";
+
+        const LOCAL_RSVPS_KEY = "edy_graduation_2026_rsvps_v1";
+        const LOCAL_CONFIG_KEY = "edy_graduation_2026_config_v1";
 
         // Default Event Configuration for Edy NGAMBOU Cantin
         const DEFAULT_EVENT_CONFIG = {
@@ -677,22 +709,56 @@
             adminPin: "2026"
         };
 
-        let currentConfig = { ...DEFAULT_EVENT_CONFIG };
-        let allRsvps = [];
+        let currentConfig = loadLocalConfig();
+        let allRsvps = loadLocalRsvps();
         let db = null;
         let auth = null;
         let currentUser = null;
         let isAdminUnlocked = false;
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'edy-graduation-2026';
 
-        // Initialize Firebase cleanly
+        function loadLocalConfig() {
+            try {
+                const raw = localStorage.getItem(LOCAL_CONFIG_KEY);
+                return raw ? { ...DEFAULT_EVENT_CONFIG, ...JSON.parse(raw) } : { ...DEFAULT_EVENT_CONFIG };
+            } catch (_) {
+                return { ...DEFAULT_EVENT_CONFIG };
+            }
+        }
+
+        function saveLocalConfig(cfg) {
+            try {
+                localStorage.setItem(LOCAL_CONFIG_KEY, JSON.stringify(cfg));
+            } catch (_) {}
+        }
+
+        function loadLocalRsvps() {
+            try {
+                const raw = localStorage.getItem(LOCAL_RSVPS_KEY);
+                const parsed = raw ? JSON.parse(raw) : [];
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (_) {
+                return [];
+            }
+        }
+
+        function saveLocalRsvps(list) {
+            try {
+                localStorage.setItem(LOCAL_RSVPS_KEY, JSON.stringify(list));
+            } catch (_) {}
+        }
+
+        // Initialize Firebase cleanly + immediate local render
         async function initApp() {
+            renderEventUI();
+            renderGuestbook();
+
             try {
                 if (typeof __firebase_config !== 'undefined') {
                     const firebaseConfig = JSON.parse(__firebase_config);
                     const app = initializeApp(firebaseConfig);
-                    db = getFirestore(app);
                     auth = getAuth(app);
+                    db = getFirestore(app);
 
                     if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                         const cred = await signInWithCustomToken(auth, __initial_auth_token);
@@ -702,135 +768,144 @@
                         currentUser = cred.user;
                     }
 
-                    setupRealtimeListeners();
-                } else {
-                    renderEventUI();
+                    // Listen for Event Settings changes
+                    const configRef = doc(db, 'artifacts', appId, 'public', 'data', 'event_settings', 'main');
+                    onSnapshot(configRef, (snap) => {
+                        if (snap.exists()) {
+                            currentConfig = { ...DEFAULT_EVENT_CONFIG, ...snap.data() };
+                            saveLocalConfig(currentConfig);
+                            renderEventUI();
+                            renderGuestbook();
+                        }
+                    }, (err) => console.warn("Lecture config Firestore:", err));
+
+                    // Listen for RSVPs in real time
+                    const rsvpsRef = collection(db, 'artifacts', appId, 'public', 'data', 'rsvps');
+                    onSnapshot(rsvpsRef, (snapshot) => {
+                        const items = [];
+                        snapshot.forEach((docSnap) => {
+                            items.push({ id: docSnap.id, ...docSnap.data() });
+                        });
+                        items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+                        if (items.length > 0 || allRsvps.length === 0) {
+                            allRsvps = items;
+                            saveLocalRsvps(allRsvps);
+                        }
+                        renderGuestbook();
+                        if (isAdminUnlocked) {
+                            renderAdminGuestList();
+                        }
+                    }, (error) => {
+                        console.warn("Lecture RSVP Firestore:", error);
+                    });
                 }
             } catch (err) {
-                console.error("Erreur d'initialisation:", err);
-                renderEventUI();
+                console.warn("Mode local actif (Firebase non configuré):", err);
             }
         }
 
-        // Listen to Event Details & RSVP List in real-time
-        function setupRealtimeListeners() {
-            if (!db || !currentUser) return;
-
-            // 1. Public Event Configuration Document
-            const configRef = doc(db, 'artifacts', appId, 'public', 'data', 'event_settings', 'main');
-            onSnapshot(configRef, (docSnap) => {
-                if (docSnap.exists()) {
-                    currentConfig = { ...DEFAULT_EVENT_CONFIG, ...docSnap.data() };
-                } else {
-                    // Seed default settings on first visit
-                    setDoc(configRef, DEFAULT_EVENT_CONFIG).catch(e => console.error(e));
-                }
-                renderEventUI();
-            }, (error) => {
-                console.error("Erreur écoute configuration:", error);
-            });
-
-            // 2. Public RSVPs Collection
-            const rsvpsCol = collection(db, 'artifacts', appId, 'public', 'data', 'rsvps');
-            onSnapshot(rsvpsCol, (snapshot) => {
-                const items = [];
-                snapshot.forEach((docItem) => {
-                    items.push({ id: docItem.id, ...docItem.data() });
-                });
-                // Sort newest first in memory
-                items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-                allRsvps = items;
-                renderGuestbook();
-                if (isAdminUnlocked) {
-                    renderAdminGuestList();
-                }
-            }, (error) => {
-                console.error("Erreur écoute RSVPs:", error);
-            });
-        }
-
-        // Update DOM with current event settings
+        // Sync UI elements and Admin Edit form with currentConfig
         function renderEventUI() {
-            document.getElementById('ui-graduate-name').textContent = currentConfig.graduateName;
-            document.getElementById('footer-name').textContent = currentConfig.graduateName;
-            document.title = `Invitation • Remise de Diplôme - ${currentConfig.graduateName}`;
+            const setText = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = val || '';
+            };
+
+            setText('ui-graduate-name', currentConfig.graduateName);
+            setText('footer-name', currentConfig.graduateName);
+            setText('ui-subtitle', currentConfig.subtitle);
+            setText('ui-date-display', currentConfig.dateDisplay);
+            setText('ui-time-display', currentConfig.timeDisplay);
+            setText('ui-venue-name', currentConfig.venueName);
+            setText('ui-venue-address', currentConfig.venueAddress);
+            setText('ui-dress-code', currentConfig.dressCode);
 
             const diplomaEl = document.getElementById('ui-diploma-title');
-            if (currentConfig.diplomaTitle && currentConfig.diplomaTitle.trim() !== "") {
-                diplomaEl.textContent = currentConfig.diplomaTitle;
-                diplomaEl.classList.remove('hidden');
-            } else {
-                diplomaEl.classList.add('hidden');
+            if (diplomaEl) {
+                if (currentConfig.diplomaTitle && currentConfig.diplomaTitle.trim() !== '') {
+                    diplomaEl.textContent = currentConfig.diplomaTitle;
+                    diplomaEl.classList.remove('hidden');
+                } else {
+                    diplomaEl.classList.add('hidden');
+                }
             }
 
-            document.getElementById('ui-subtitle').textContent = currentConfig.subtitle;
-            document.getElementById('ui-date-display').textContent = currentConfig.dateDisplay;
-            document.getElementById('ui-time-display').textContent = currentConfig.timeDisplay;
-            document.getElementById('ui-venue-name').textContent = currentConfig.venueName;
-            document.getElementById('ui-venue-address').textContent = currentConfig.venueAddress || "Accueil chaleureux";
-            document.getElementById('ui-dress-code').textContent = currentConfig.dressCode || "Tenue chic souhaitée";
+            const mapsLink = document.getElementById('ui-maps-link');
+            if (mapsLink) {
+                const q = encodeURIComponent(`${currentConfig.venueName} ${currentConfig.venueAddress || ''}`.trim());
+                mapsLink.href = `https://maps.google.com/?q=${q}`;
+            }
 
-            const mapsQuery = encodeURIComponent(`${currentConfig.venueName} ${currentConfig.venueAddress || ''}`.trim());
-            document.getElementById('ui-maps-link').href = `https://maps.google.com/?q=${mapsQuery}`;
-
-            // Populate Admin Edit Fields
-            document.getElementById('edit-name').value = currentConfig.graduateName;
-            document.getElementById('edit-diploma').value = currentConfig.diplomaTitle || "";
-            document.getElementById('edit-date-text').value = currentConfig.dateDisplay;
-            document.getElementById('edit-time-text').value = currentConfig.timeDisplay;
-            document.getElementById('edit-countdown-iso').value = currentConfig.countdownIso;
-            document.getElementById('edit-venue').value = currentConfig.venueName;
-            document.getElementById('edit-address').value = currentConfig.venueAddress || "";
-            document.getElementById('edit-dresscode').value = currentConfig.dressCode || "";
-            document.getElementById('edit-pin').value = currentConfig.adminPin || "2026";
-            document.getElementById('edit-subtitle').value = currentConfig.subtitle;
+            // Pre-fill Admin Edit Form
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.value = val || '';
+            };
+            setVal('edit-name', currentConfig.graduateName);
+            setVal('edit-diploma', currentConfig.diplomaTitle);
+            setVal('edit-date-text', currentConfig.dateDisplay);
+            setVal('edit-time-text', currentConfig.timeDisplay);
+            setVal('edit-countdown-iso', currentConfig.countdownIso);
+            setVal('edit-venue', currentConfig.venueName);
+            setVal('edit-address', currentConfig.venueAddress);
+            setVal('edit-dresscode', currentConfig.dressCode);
+            setVal('edit-pin', currentConfig.adminPin);
+            setVal('edit-subtitle', currentConfig.subtitle);
         }
 
-        // Render Public Guestbook & Confirmed Counter
+        // Render Public Scrolling Guestbook (Name & Message ONLY, directly under "Messages des invités")
         function renderGuestbook() {
-            let confirmedPeople = 0;
-            const messages = [];
+            const track = document.getElementById('guestbook-marquee-track');
+            if (!track) return;
 
-            allRsvps.forEach(item => {
-                if (item.attending) {
-                    confirmedPeople += parseInt(item.guests || 1, 10);
-                }
-                if (item.message && item.message.trim() !== "") {
-                    messages.push(item);
-                }
-            });
+            const messages = allRsvps.filter(item => item.message && item.message.trim() !== "");
 
-            document.getElementById('public-confirmed-count').textContent = confirmedPeople;
+            const entries = messages.length > 0 ? messages : [{
+                name: currentConfig.graduateName,
+                message: `Soyez le premier à laisser un message de félicitations !`
+            }];
 
-            const grid = document.getElementById('guestbook-grid');
-            if (messages.length === 0) {
-                grid.innerHTML = `
-                    <div class="luxury-card rounded-2xl p-6 text-center col-span-full text-gray-400 text-sm">
-                        Soyez le premier à laisser un message de félicitations à ${escapeHtml(currentConfig.graduateName)} !
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = messages.map(m => `
-                <div class="luxury-card rounded-2xl p-5 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-full bg-gold-400/20 border border-gold-400/40 flex items-center justify-center text-gold-300 font-display text-xs font-bold">
-                                    ${escapeHtml(m.name.charAt(0).toUpperCase())}
-                                </div>
-                                <span class="font-semibold text-sm text-white">${escapeHtml(m.name)}</span>
-                            </div>
-                            ${m.attending
-                                ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Présent(e)</span>`
-                                : `<span class="text-[10px] px-2 py-0.5 rounded-full bg-gold-400/15 text-gold-300 border border-gold-400/30">Pensée</span>`
-                            }
+            const buildCardHtml = (m) => `
+                <div class="w-72 sm:w-80 shrink-0 rounded-2xl bg-obsidian/85 border border-gold-400/30 p-4 sm:p-5 flex flex-col justify-between shadow-lg">
+                    <div class="flex items-center gap-2.5 mb-2.5">
+                        <div class="w-8 h-8 rounded-full bg-gold-400/20 border border-gold-400/40 flex items-center justify-center text-gold-300 font-display text-xs font-bold shrink-0">
+                            ${escapeHtml(m.name.charAt(0).toUpperCase())}
                         </div>
-                        <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">"${escapeHtml(m.message)}"</p>
+                        <span class="font-semibold text-sm text-gold-100 truncate">${escapeHtml(m.name)}</span>
                     </div>
+                    <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed line-clamp-3">« ${escapeHtml(m.message.trim())} »</p>
                 </div>
-            `).join('');
+            `;
+
+            const singleBatch = entries.map(buildCardHtml).join('');
+            // Duplicate batch for seamless continuous horizontal scrolling
+            track.innerHTML = singleBatch + singleBatch;
+        }
+
+        // Send response to external FORM_ENDPOINT_URL if configured
+        async function postToExternalFormEndpoint(payload) {
+            if (!FORM_ENDPOINT_URL || FORM_ENDPOINT_URL.trim() === "") return;
+            try {
+                await fetch(FORM_ENDPOINT_URL.trim(), {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        nom_prenom: payload.name,
+                        contact: payload.contact || "",
+                        presence: payload.attending ? "Présent(e)" : "Absent(e)",
+                        nombre_personnes: payload.guests,
+                        message: payload.message || "",
+                        evenement: currentConfig.graduateName,
+                        date_envoi: new Date(payload.createdAt).toISOString()
+                    })
+                });
+            } catch (err) {
+                console.warn("Envoi vers FORM_ENDPOINT_URL non abouti:", err);
+            }
         }
 
         // Handle RSVP Form Submission
@@ -858,11 +933,21 @@
             };
 
             try {
+                // Immediately update local state & UI so guests see submitted message right away
+                const localEntry = { id: `local_${Date.now()}`, ...rsvpPayload };
+                allRsvps = [localEntry, ...allRsvps];
+                saveLocalRsvps(allRsvps);
+                renderGuestbook();
+                if (isAdminUnlocked) {
+                    renderAdminGuestList();
+                }
+
+                // Post to user's configured external form URL if provided
+                await postToExternalFormEndpoint(rsvpPayload);
+
+                // Sync to Firestore if available
                 if (db && currentUser) {
                     await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'rsvps'), rsvpPayload);
-                } else {
-                    allRsvps.unshift({ id: Date.now().toString(), ...rsvpPayload });
-                    renderGuestbook();
                 }
 
                 // Show celebration UI
@@ -879,17 +964,17 @@
                     document.getElementById('success-desc').textContent = `Merci ${nameInput} de nous avoir prévenus. Vous serez dans nos pensées lors de cette belle soirée !`;
                 }
 
-                showToast("Votre réponse a bien été envoyée !");
+                showToast("Votre réponse est enregistrée et visible !");
             } catch (err) {
                 console.error("Erreur lors de l'envoi RSVP:", err);
-                showToast("Une erreur est survenue, veuillez réessayer.", true);
+                showToast("Réponse enregistrée localement ; vérifiez la connexion.", true);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> <span>Envoyer ma réponse</span>`;
             }
         });
 
-        // Save Admin Edits to Firestore
+        // Save Admin Edits to Firestore + Local Storage
         window.saveEventSettings = async function(e) {
             e.preventDefault();
             const btn = document.getElementById('save-settings-btn');
@@ -910,17 +995,19 @@
             };
 
             try {
+                currentConfig = { ...currentConfig, ...updatedData };
+                saveLocalConfig(currentConfig);
+                renderEventUI();
+                renderGuestbook();
+
                 if (db && currentUser) {
                     const configRef = doc(db, 'artifacts', appId, 'public', 'data', 'event_settings', 'main');
                     await setDoc(configRef, updatedData);
-                } else {
-                    currentConfig = { ...currentConfig, ...updatedData };
-                    renderEventUI();
                 }
                 showToast("Informations mises à jour en direct !");
             } catch (err) {
                 console.error("Erreur sauvegarde paramètres:", err);
-                showToast("Erreur lors de la sauvegarde.", true);
+                showToast("Sauvegardé localement ; erreur réseau distante.", true);
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = `<i class="fa-solid fa-floppy-disk"></i> <span>Enregistrer les modifications</span>`;
@@ -930,12 +1017,13 @@
         // Delete a guest entry (Admin)
         window.deleteGuestEntry = async function(id) {
             try {
-                if (db && currentUser) {
+                allRsvps = allRsvps.filter(g => g.id !== id);
+                saveLocalRsvps(allRsvps);
+                renderGuestbook();
+                renderAdminGuestList();
+
+                if (db && currentUser && !String(id).startsWith('local_')) {
                     await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'rsvps', id));
-                } else {
-                    allRsvps = allRsvps.filter(g => g.id !== id);
-                    renderGuestbook();
-                    renderAdminGuestList();
                 }
                 showToast("Entrée supprimée.");
             } catch (err) {
